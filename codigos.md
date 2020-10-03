@@ -6,3 +6,5 @@ npm i --save react-native-vector-icons
 npx react-native link react-native-vector-icons
 
 npx react-native run-android
+
+Ícones https://pixabay.com/pt/
