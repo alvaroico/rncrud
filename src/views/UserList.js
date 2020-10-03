@@ -17,7 +17,7 @@ function confirmUserDeletion(user) {
   ]);
 }
 
-function getActions(user) {
+function getActions(user, props) {
   return (
     <>
       <Button
@@ -46,7 +46,7 @@ export default (props) => {
           <ListItem.Title>{user.name}</ListItem.Title>
           <ListItem.Subtitle>{user.email}</ListItem.Subtitle>
         </ListItem.Content>
-        <ListItem rightElement={getActions(user)} />
+        <ListItem rightElement={getActions(user, props)} />
       </ListItem>
     );
   }
