@@ -3,5 +3,6 @@ npm install react-native-reanimated react-native-gesture-handler react-native-sc
 npm install @react-navigation/stack
 npm i react-native-elements --save
 npm i --save react-native-vector-icons
+npx react-native link react-native-vector-icons
 
 npx react-native run-android
