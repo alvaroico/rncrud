@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, FlatList, Alert} from 'react-native';
-import {Button, Icon, ListItem} from 'react-native-elements';
+import {Avatar, Button, Icon, ListItem} from 'react-native-elements';
 import users from '../data/users';
 
 function confirmUserDeletion(user) {
@@ -38,14 +38,16 @@ export default (props) => {
   function getUserItem({item: user}) {
     return (
       <ListItem
-        leftAvatar={{source: {uri: user.avatarUrl}}}
-        key={user.id}
-        title={user.name}
-        subtitle={user.email}
         bottomDivider
-        rightElement={getActions(user)}
-        onPress={() => props.navigation.navigate('UserForm')}
-      />
+        key={user.id}
+        onPress={() => props.navigation.navigate('UserForm')}>
+        <Avatar source={{uri: user.avatarUrl}} />
+        <ListItem.Content>
+          <ListItem.Title>{user.name}</ListItem.Title>
+          <ListItem.Subtitle>{user.email}</ListItem.Subtitle>
+        </ListItem.Content>
+        <ListItem rightElement={getActions(user)} />
+      </ListItem>
     );
   }
 
