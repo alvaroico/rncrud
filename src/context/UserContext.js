@@ -13,6 +13,13 @@ const actions = {
       users: [...state.users, user],
     };
   },
+  updateUser(state, action) {
+    const update = action.payload;
+    return {
+      ...state,
+      users: state.users.map((u) => (u.id === update.id ? update : u)),
+    };
+  },
   deleteUser(state, action) {
     const user = action.payload;
     return {
